@@ -1,0 +1,33 @@
+const int buttonPin = 2;         // منفذ الزر
+const int ledBuiltin = LED_BUILTIN;
+const int led1 = 8;
+const int led2 = 7;
+
+void setup()
+{
+  pinMode(buttonPin, INPUT_PULLUP); // نستخدم المقاومة الداخلية
+  pinMode(ledBuiltin, OUTPUT);
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+}
+
+void loop()
+{
+  if (digitalRead(buttonPin) == LOW)  // الزر مضغوط (لأننا نستخدم INPUT_PULLUP)
+  {
+    digitalWrite(ledBuiltin, HIGH);
+    delay(1000);
+    digitalWrite(ledBuiltin, LOW);
+    delay(1000);
+
+    digitalWrite(led1, HIGH);
+    delay(1000);
+    digitalWrite(led1, LOW);
+    delay(1000);
+
+    digitalWrite(led2, HIGH);
+    delay(1000);
+    digitalWrite(led2, LOW);
+    delay(1000);
+  }
+}
